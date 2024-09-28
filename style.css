@@ -1,24 +1,24 @@
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 #board {
     display: grid;
     grid-template-columns: repeat(var(--GRID_WIDTH), max-content);
-    border: 1px solid black;
     grid-template-rows: repeat(var(--GRID_HEIGHT), max-content);
+    border: 1px solid black;
     gap: 0.5em;
 }
 
 .cell {
+    background-color: black;
+    border-color: black;
+    justify-content: center;
     width: 10px;
     height: 10px;
-    aspect-ratio: 1 / 1;
     padding: 2px;
     border: 2.5px solid;
-    border-color: black;
     display: flex;
+    aspect-ratio: 1 / 1;
     align-items: center;
-    justify-content: center;
-    background-color: black;
 }

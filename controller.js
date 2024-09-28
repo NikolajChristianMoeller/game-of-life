@@ -1,5 +1,5 @@
-import * as view from "./view.js";
 import * as model from "./model.js";
+import * as view from "./view.js";
 
 export const GRID_HEIGHT = 40;
 export const GRID_WIDTH = 40;
@@ -49,7 +49,7 @@ function decideIfCellDiesOrLives(row, col) {
   } else if (neighbours == 2) {
     newValue = value;
   } else if (neighbours == 3) {
-    newValue = 1; // En ny celle bliver født, eller cellen lever videre
+    newValue = 1;
   }
 
   return newValue;
@@ -62,10 +62,8 @@ function createCells() {
     for (let col = 0; col < GRID_WIDTH; col++) {
       const cell = document.createElement("div");
       cell.classList.add("cell");
-      // adds the row and column data to the cell element
       cell.dataset.row = row;
       cell.dataset.col = col;
-      // adds cell to the board
       board.appendChild(cell);
 
       const isAlive = Math.random() > 0.7 ? 1 : 0;
@@ -73,7 +71,7 @@ function createCells() {
     }
   }
 
-  view.renderGrid(model.grid); // Initial render of the grid
+  view.renderGrid(model.grid);
 }
 
 export { decideIfCellDiesOrLives, updateGrid };

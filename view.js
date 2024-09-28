@@ -1,12 +1,9 @@
 import * as controller from "./controller.js";
-// import * as model from "./model.js"
 let generationCount = 0;
 
 function init() {
   console.log("Viewet kører");
 }
-
-// viewet skal lave noget 1 til 1 med model.
 
 function renderGrid(grid) {
   const board = document.querySelector("#board");
@@ -26,8 +23,8 @@ function renderGrid(grid) {
 
 function createBoard() {
   const board = document.querySelector("#board");
-  board.style.setProperty("--GRID_WIDTH", controller.GRID_WIDTH);
   board.style.setProperty("--GRID_HEIGHT", controller.GRID_HEIGHT);
+  board.style.setProperty("--GRID_WIDTH", controller.GRID_WIDTH);
 }
 
 function iterateGenerationCount() {

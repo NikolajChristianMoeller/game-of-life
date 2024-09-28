@@ -1,8 +1,8 @@
-import { Grid } from "./grid.js";
 import * as controller from "./controller.js";
+import { Grid } from "./grid.js";
 
-const GRID_HEIGHT = 40;
 const GRID_WIDTH = 40;
+const GRID_HEIGHT = 40;
 
 export let grid = new Grid(GRID_HEIGHT, GRID_WIDTH);
 
@@ -37,9 +37,7 @@ function addRandomCells() {
 function countNeightbours(row, col) {
   let count = 0;
   for (let y = -1; y <= 1; y++) {
-    // Rettet fra x til y
     for (let x = -1; x <= 1; x++) {
-      // Avoid counting myself
       if (!(x === 0 && y === 0)) {
         count += grid.get(row + y, col + x);
       }
@@ -57,8 +55,6 @@ function scanGrid() {
       nextGeneration.set(row, col, newValue);
     }
   }
-
-  // Opdater det nuværende grid til den nye generation
   grid = nextGeneration;
 }
 
@@ -91,7 +87,7 @@ function decideIfCellDiesOrLives(row, col) {
   } else if (neighbours == 2) {
     newValue = value;
   } else if (neighbours == 3) {
-    newValue = 1; // En ny celle bliver født, eller cellen lever videre
+    newValue = 1;
   }
 
   return newValue;

@@ -7,7 +7,7 @@ export class Grid {
 
   get(row, col) {
     if (row < 0 || row >= this.rows || col < 0 || col >= this.cols) {
-      return undefined; // Returner 0 for out-of-bounds celler
+      return undefined;
     }
     let value = this.grid[row][col];
     return value;
@@ -15,7 +15,7 @@ export class Grid {
 
   set(row, col, value) {
     if (row < 0 || row >= this.rows || col < 0 || col >= this.cols) {
-      return undefined; // Returner 0 for out-of-bounds celler
+      return undefined;
     }
     this.grid[row][col] = value;
   }
@@ -33,16 +33,13 @@ export class Grid {
   neighboursWithCheck(row, col) {
     if (row === 0) {
       if (col == 0) {
-        // this is NORTH WEST
         this.east(row, col);
         this.south(row, col);
         this.south_east(row, col);
       } else if (col === this.cols) {
-        // this is NORTH EAST
         this.west(row, col);
         this.south(row, col);
       } else {
-        // this is top North
         this.east(row, col);
         this.south_east(row, col);
         this.west(row, col);
@@ -51,17 +48,14 @@ export class Grid {
       }
     } else if (row === this.rows) {
       if (col === 0) {
-        // this is sout west
         this.north();
         this.south_east(row, col);
         this.east();
       } else if (col === this.cols) {
-        // this is south east
         this.north();
         this.west();
         this.north_west(row, col);
       } else {
-        // this is bot South
         this.north();
         this.north_east(row, col);
         this.east();
