@@ -1,7 +1,7 @@
 # Game of Life
 
-Dette er Game of Life spillet som er først blev udviklet af John Horton Conway. Features er blandt andet oprettelse af et grid, tælning af generationer, og det at man kan finde ud af at en celle dør
+This is the Game of Life, a game originally developed by John Horton Conway. Features include the creation of a grid, counting generations, and determining when a cell dies.
 
-Den deployede version af spillet på GitHub Pages
+The deployed version of the game on GitHub Pages:
 
-https://nikolajchristianmoeller.github.io/Game-of-Life/
+https://nikolajchristianmoeller.github.io/game-of-life
